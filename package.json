@@ -9,7 +9,8 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -29,5 +30,10 @@
     "puppeteer": "^1.0.0",
     "redis": "^2.8.0",
     "uuid": "^3.2.1"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setup.js",
+    "verbose": true,
+    "testURL": "http://localhost/"
   }
 }
